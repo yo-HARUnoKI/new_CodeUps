@@ -1,0 +1,33 @@
+@use "global" as *;
+
+////////////////////
+// 初期設定
+////////////////////
+
+// フォントウェイト、カラー設定
+body {
+  font-weight: $normal;
+  color: $black;
+}
+
+// ホバー
+a:hover,
+button:hover {
+  @include mq('md') {
+    cursor: pointer;
+  }
+}
+
+// 電話番号リンクのスマホのみ有効化
+a[href*="tel:"] {
+  text-decoration: none;
+  @include mq('md') {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+// ヘッダー固定によるコンテンツの位置調整
+main {
+  margin-top: rem(80);
+}
