@@ -1,0 +1,52 @@
+@use "global" as *;
+
+.fv {
+  position: relative;
+}
+
+.fv__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(250 / 375 * 100%);
+  z-index: 1;
+  @include mq('md') {
+    width: calc(496 / 1440 * 100%);
+  }
+}
+
+.fv__title {
+  font-size: rem(40);
+  font-family: $lato-font-family;
+  font-weight: $normal;
+  color: $white;
+  letter-spacing: 0.54em;
+  line-height: calc(48 / 40);
+  text-align: center;
+  text-transform: uppercase;
+  @include mq('md') {
+    font-size: rem(80);
+    letter-spacing: 0.53em;
+    line-height: calc(100 / 80);
+  }
+}
+
+.fv__text-box {
+  margin-left: rem(-3);
+}
+
+.fv__text {
+  font-size: rem(20);
+  font-family: $second-font-family;
+  color: $white;
+  line-height: calc(33 / 20);
+  text-align: center;
+}
+
+.fv__swiper-container,
+.fv__swiper,
+.fv__swiper-wrapper,
+.fv__swiper-slide {
+  position: relative;
+}
