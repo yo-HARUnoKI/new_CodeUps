@@ -49,10 +49,11 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   -------------------------------*/
   const totop = jQuery('.js-totop');
   const headerHight = jQuery('.js-header').height();
+  const fvHight = jQuery('.fv').height();
 
   totop.hide();
   jQuery(window).on('scroll', function() {
-    if(jQuery(this).scrollTop() > headerHight) {
+    if(jQuery(this).scrollTop() > fvHight - headerHight) {
       totop.fadeIn();
     } else {
       totop.fadeOut();

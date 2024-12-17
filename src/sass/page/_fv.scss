@@ -1,7 +1,28 @@
 @use "global" as *;
 
 .fv {
+  min-height: rem(667);
+  height: 100vh;
   position: relative;
+  @include mq('md') {
+    min-height: rem(768);
+  }
+}
+
+.fv__img {
+  height: inherit;
+}
+
+.fv__img img {
+  aspect-ratio: 375 / 667;
+  width: 100%;
+  min-height: rem(667);
+  height: 100vh;
+  object-fit: cover;
+  @include mq('md') {
+    aspect-ratio: 1440 / 768;
+    min-height: rem(768);
+  }
 }
 
 .fv__content {
@@ -48,5 +69,10 @@
 .fv__swiper,
 .fv__swiper-wrapper,
 .fv__swiper-slide {
+  min-height: rem(667);
+  height: inherit;
   position: relative;
+  @include mq('md') {
+    min-height: rem(768);
+  }
 }
