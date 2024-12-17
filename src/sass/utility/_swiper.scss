@@ -16,6 +16,7 @@
 }
 
 // campaign
+
 // =============================
 // ナビゲーションボタン
 // =============================
@@ -38,8 +39,12 @@
   }
 }
 .swiper-button-prev {
-  left: 0;
+  @include mq('md') {
+    left: 0;
+  }
 }
 .swiper-button-next {
-  right: 0;
+  @include mq('md') {
+    right: 0;
+  }
 }
