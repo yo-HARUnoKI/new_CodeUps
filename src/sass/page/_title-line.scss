@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.title-line {
+  position: relative;
+}
+
+.title-line::after {
+  content: "";
+  margin-top: rem(3);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: $accent;
+  border-radius: 50%;
+}
+
+// campaign
+.title-line.title-line--campaign::after {
+  margin-top: rem(7);
+}
+
+// information
+.title-line.title-line--information::after {
+  @include mq('md') {
+    margin-top: rem(7);
+  }
+}
