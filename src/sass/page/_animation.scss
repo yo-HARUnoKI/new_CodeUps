@@ -1,0 +1,80 @@
+@use "global" as *;
+
+.animation {
+  position: relative;
+}
+
+// information
+.animation.animation--information {
+  @include mq('md') {
+    width: calc(540 / 1080 * 100%);
+  }
+}
+
+// voice
+.animation.animation.animation--voice {
+  width: calc(151 / 313 * 100%);
+  @include mq('md') {
+    width: calc(180 / 472 * 100%);
+  }
+}
+
+// price
+.animation.animation.animation--price {
+  @include mq('md') {
+    width: calc(492 / 1077 * 100%);
+  }
+}
+
+.animation__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  z-index: 2;
+  background-color: $accent;
+}
+
+.animation__bg.is-show {
+  animation-name: bgImgSlide;
+  animation-duration: 1.2s;
+  animation-delay: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bgImgSlide {
+  0% {
+    width: 0%;
+    right: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+    left: 0;
+    right: auto;
+  }
+}
+
+.animation__img {
+  opacity: 0;
+}
+
+.animation__img.is-show {
+  animation-name: imgSlide;
+  animation-duration: 0.3s;
+  animation-delay: 1.7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes imgSlide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

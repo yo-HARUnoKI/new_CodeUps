@@ -37,8 +37,10 @@
 }
 
 .button:hover::after {
-  width: 100%;
-  z-index: 0;
+  @include mq('md') {
+    width: 100%;
+    z-index: 0;
+  }
 }
 
 .button__text {
@@ -52,8 +54,10 @@
 }
 
 .button:hover .button__text {
-  color: $accent;
-  z-index: 1;
+  @include mq('md') {
+    color: $accent;
+    z-index: 1;
+  }
 }
 
 .button__text::first-letter {
@@ -81,6 +85,8 @@
 }
 
 .button:hover .button__text::after {
-  background-image: url(../../assets/images/common/icon-arrowGreen.svg);
-  z-index: 1;
+  @include mq('md') {
+    background-image: url(../../assets/images/common/icon-arrowGreen.svg);
+    z-index: 1;
+  }
 }
