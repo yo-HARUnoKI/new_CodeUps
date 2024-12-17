@@ -38,13 +38,43 @@
     height: rem(80);
   }
 }
+
 .swiper-button-prev {
   @include mq('md') {
     left: 0;
   }
 }
+
 .swiper-button-next {
   @include mq('md') {
     right: 0;
+  }
+}
+
+.swiper-button-prev svg circle,
+.swiper-button-next svg circle {
+  @include mq('md') {
+    transition: fill .3s;
+  }
+}
+
+.swiper-button-prev:hover svg circle,
+.swiper-button-next:hover svg circle {
+  @include mq('md') {
+    fill: #408f95;
+  }
+}
+
+.swiper-button-prev svg path,
+.swiper-button-next svg path {
+  @include mq('md') {
+    transition: stroke .3s;
+  }
+}
+
+.swiper-button-prev:hover svg path,
+.swiper-button-next:hover svg path {
+  @include mq('md') {
+    stroke: #fff;
   }
 }

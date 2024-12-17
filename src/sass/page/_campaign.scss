@@ -43,6 +43,13 @@
   @include mq('md') {
     padding-left: rem(10);
     width: rem(343);
+    transition: opacity .3s;
+  }
+}
+
+.campaign__swiper-slide:hover {
+  @include mq('md') {
+    opacity: .7;
   }
 }
 

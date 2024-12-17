@@ -34,6 +34,15 @@
 
 .footer__logo-link {
   display: inline-block;
+  @include mq('md') {
+    transition: opacity .3s;
+  }
+}
+
+.footer__logo-link:hover {
+  @include mq('md') {
+    opacity: .7;
+  }
 }
 
 .footer__logo-link img {
@@ -61,6 +70,13 @@
   width: rem(24);
   @include mq('md') {
     width: rem(32);
+    transition: opacity .3s;
+  }
+}
+
+.footer__sns-icon:hover {
+  @include mq('md') {
+    opacity: .7;
   }
 }
 
@@ -122,6 +138,15 @@
 .footer__link {
   color: $white;
   line-height: calc(18 / 16);
+  @include mq('md') {
+    transition: opacity .3s;
+  }
+}
+
+.footer__link:hover {
+  @include mq('md') {
+    opacity: .7;
+  }
 }
 
 .footer__link.footer__link--top {

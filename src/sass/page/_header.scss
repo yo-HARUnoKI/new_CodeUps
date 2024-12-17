@@ -36,6 +36,13 @@
   display: inline-block;
   @include mq('md') {
     width: rem(133);
+    transition: opacity .3s;
+  }
+}
+
+.header__logo-link:hover {
+  @include mq('md') {
+    opacity: .7;
   }
 }
 
