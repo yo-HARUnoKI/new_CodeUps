@@ -1,0 +1,78 @@
+@use "global" as *;
+
+.drawer {
+  width: 100%;
+  height: 100vh;
+  background-color: $accent;
+}
+
+.drawer__inner {
+  padding-inline: rem(15);
+}
+
+.drawer__logo-link {
+  position: absolute;
+  top: rem(21);
+  left: rem(15);
+  width: rem(102);
+  display: inline-block;
+}
+
+.drawer__logo-link img {
+  aspect-ratio: 102 / 38;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.drawer__wrapper {
+  margin-top: rem(104);
+  margin-inline: auto;
+  width: 100%;
+  max-width: rem(345);
+  height: calc(100vh - #{rem(104)});
+  display: flex;
+  gap: rem(7);
+  overflow: auto;
+}
+
+.drawer__container {
+  height: inherit;
+  display: grid;
+  grid-auto-rows: max-content;
+  gap: rem(40);
+}
+
+.drawer__content {
+  padding-left: rem(22);
+  display: grid;
+  gap: rem(24);
+  position: relative;
+}
+
+.drawer__content:last-of-type {
+  padding-block: 0 rem(50);
+}
+
+.drawer__content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: rem(18);
+  height: rem(18);
+  background-image: url(../../assets/images/common/icon-starfish.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.drawer__link {
+  color: $white;
+  line-height: calc(18 / 16);
+}
+
+.drawer__link.drawer__link--top {
+  font-weight: $bold;
+  position: relative;
+}

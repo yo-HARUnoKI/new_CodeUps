@@ -1,0 +1,39 @@
+@use "global" as *;
+
+.hamburger {
+  width: rem(32);
+  height: rem(24);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hamburger.is-active {
+  position: relative;
+  z-index: 100;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 1px;
+  display: block;
+  background-color: $white;
+  border-radius: 100%;
+  transition: transform .5s, opacity .5s;
+}
+
+.hamburger.is-active span:nth-of-type(1) {
+  width: rem(40);
+  transform: translateY(#{rem(11)}) rotate(38deg);
+}
+
+.hamburger.is-active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.hamburger.is-active span:nth-of-type(3) {
+  width: rem(40);
+  transform: translateY(#{rem(-12)}) rotate(-38deg);
+}

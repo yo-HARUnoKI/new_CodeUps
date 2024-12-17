@@ -42,3 +42,17 @@ a[href*="tel:"] {
     cursor: default;
   }
 }
+
+img {
+  height: auto;
+}
+
+button {
+  border: none;
+  padding: 0;
+  background-color: initial;
+}
+
+address {
+  font-style: normal;
+}
