@@ -1,0 +1,28 @@
+@use "global" as *;
+
+.price-plan__title {
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: calc(24 / 16);
+}
+
+.price-plan__lists {
+  margin-top: rem(12);
+  display: grid;
+  gap: rem(8);
+}
+
+.price-plan__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-plan__text {
+  font-size: rem(14);
+  line-height: calc(24 / 14);
+  @include mq('md') {
+    font-size: rem(16);
+    line-height: calc(24 / 16);
+  }
+}

@@ -1,0 +1,56 @@
+@use "global" as *;
+
+.price {
+  padding-block: rem(80) rem(84);
+  background-color: #ddf0f1;
+  @include mq('md') {
+    padding-block: rem(100) rem(104);
+  }
+}
+
+.price__wrapper {
+  margin-top: rem(28);
+  @include mq('md') {
+    margin-top: rem(40);
+    margin-inline: auto;
+    width: calc(1077 / 1080 * 100%);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+
+.price__img img {
+  aspect-ratio: 345 / 227;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  @include mq('md') {
+    aspect-ratio: 492 / 746;
+  }
+}
+
+.price__plans {
+  margin-top: rem(40);
+  margin-inline: auto;
+  width: 100%;
+  max-width: rem(450);
+  display: grid;
+  gap: rem(40);
+  @include mq('md') {
+    margin-top: 0;
+    margin-inline: 0;
+    width: calc(492 / 1077 * 100%);
+    max-width: initial;
+    grid-auto-rows: max-content;
+  }
+}
+
+.price__button {
+  margin-top: rem(40);
+  margin-left: rem(-3);
+  text-align: center;
+  @include mq('md') {
+    margin-top: rem(80);
+  }
+}
