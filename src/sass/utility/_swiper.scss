@@ -1,0 +1,45 @@
+@use "global" as *;
+
+// 共通
+//位置のreset
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullets.swiper-pagination-horizontal  {
+  @include mq('md') {
+    margin: 0;
+    padding: 0;
+    top: unset;
+    bottom: unset;
+    left: unset;
+    right: unset;
+  }
+}
+
+// campaign
+// =============================
+// ナビゲーションボタン
+// =============================
+//デフォルトのボタンを初期化
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  @include mq('md') {
+    content: ""; //デフォルトのものを初期化
+  }
+}
+
+//各ボタンのカスタマイズ
+.swiper-button-prev,
+.swiper-button-next {
+  @include mq('md') {
+    position: absolute;
+    top: 0;
+    width: rem(80);
+    height: rem(80);
+  }
+}
+.swiper-button-prev {
+  left: 0;
+}
+.swiper-button-next {
+  right: 0;
+}

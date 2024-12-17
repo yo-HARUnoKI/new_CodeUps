@@ -1,0 +1,7 @@
+@use "global" as *;
+
+.sp-only {
+  @include mq(md) {
+    display: none;
+  }
+}

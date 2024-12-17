@@ -1,0 +1,86 @@
+@use "global" as *;
+
+.button {
+  padding: rem(15) rem(87) rem(15) rem(39);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $accent;
+  border: 1px solid $accent;
+  position: relative;
+}
+
+// contact
+.button.button--contact {
+  padding: rem(15) rem(86) rem(15) rem(39);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: rem(3);
+  left: rem(3);
+  width: calc(100% + #{rem(2)});
+  height: calc(100% + #{rem(2)});
+  border: 1px solid $accent;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #fff;
+  transition: width .3s;
+}
+
+.button:hover::after {
+  width: 100%;
+  z-index: 0;
+}
+
+.button__text {
+  display: inline-block;
+  font-size: rem(14);
+  font-family: $second-font-family;
+  color: $white;
+  line-height: calc(22 / 14);
+  transition: color .3s;
+  position: relative;
+}
+
+.button:hover .button__text {
+  color: $accent;
+  z-index: 1;
+}
+
+.button__text::first-letter {
+  text-transform: uppercase;
+}
+
+.button__text::before,
+.button__text::after {
+  content: "";
+  position: absolute;
+}
+
+.button__text::after {
+  margin-left: rem(7);
+  top: calc(50% - #{rem(2)});
+  left: 100%;
+  transform: translateY(-50%);
+  width: rem(42);
+  height: rem(8);
+  background-image: url(../../assets/images/common/icon-arrowWhite.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition: background-image .3s;
+}
+
+.button:hover .button__text::after {
+  background-image: url(../../assets/images/common/icon-arrowGreen.svg);
+  z-index: 1;
+}

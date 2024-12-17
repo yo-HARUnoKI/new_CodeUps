@@ -4,10 +4,26 @@
 // 初期設定
 ////////////////////
 
+// スムーススクロール設定
+html {
+  scroll-behavior: smooth;
+}
+
+// 横スクロール制御
+html, body {
+  overflow-x: clip;
+}
+
 // フォントウェイト、カラー設定
 body {
   font-weight: $normal;
   color: $black;
+}
+
+// ハンバーガーメニュー開閉時のスクロール設定
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden;
 }
 
 // ホバー
@@ -25,9 +41,4 @@ a[href*="tel:"] {
     pointer-events: none;
     cursor: default;
   }
-}
-
-// ヘッダー固定によるコンテンツの位置調整
-main {
-  margin-top: rem(80);
 }
