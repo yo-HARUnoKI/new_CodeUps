@@ -22,6 +22,27 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     jQuery('html, body').removeClass('no-scroll');
   });
 
+  /*-------------------------------
+    ページ内遷移（ヘッダー高さを考慮）
+  -------------------------------*/
+  jQuery(document).ready(function() {
+    // ヘッダーの高さを取得
+    const headerOuterHeight = jQuery('.js-header').outerHeight();
+
+    // ページ内スクロール
+    jQuery('a[href^="#"]').on('click', function() {
+      const speed = 600;
+      let href = jQuery(this).attr("href");
+      let targetLink = jQuery(href == "#" || href == "" ? "html" : href);
+
+      // スクロール先の位置を取得してヘッダーの高さを考慮
+      let position = targetLink.offset().top - headerOuterHeight - 50;
+
+      jQuery("body,html").animate({ scrollTop: position }, speed, "swing");
+      return false;
+    });
+  });
+
   /*------------------------------------
     画像のアニメーション
     （information, voice, price）
@@ -62,7 +83,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 });
 
-
 /*-------------------------------
   スワイパー実装（fv）
 -------------------------------*/
@@ -85,7 +105,6 @@ const fvSwiper = new Swiper('.fv__swiper', { //swiperの名前
    //表示について
   centeredSlides: true, //中央寄せにする
   slidesPerView: 1,
-  // spaceBetween: 30,
 });
 
 /*-------------------------------
