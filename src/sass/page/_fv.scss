@@ -25,19 +25,18 @@
   }
 }
 
+
 .fv__content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(250 / 375 * 100%);
+  width: 100%;
   z-index: 1;
-  @include mq('md') {
-    width: calc(496 / 1440 * 100%);
-  }
 }
 
 .fv__title {
+  margin-left: rem(22);
   font-size: rem(40);
   font-family: $lato-font-family;
   font-weight: $normal;
@@ -47,6 +46,7 @@
   text-align: center;
   text-transform: uppercase;
   @include mq('md') {
+    margin-left: rem(42);
     font-size: rem(80);
     letter-spacing: 0.53em;
     line-height: calc(100 / 80);

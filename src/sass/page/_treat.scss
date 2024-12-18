@@ -1,0 +1,122 @@
+@use "global" as *;
+
+.treat {
+  @include mq('md') {
+    position: relative;
+  }
+}
+
+// contact
+.treat.treat--contact {
+  position: relative;
+}
+
+.treat::before,
+.treat::after {
+  @include mq('md') {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+// about
+.treat.treat--about::before {
+  @include mq('md') {
+    content: none;
+  }
+}
+
+.treat.treat--about::after {
+  @include mq('md') {
+    top: calc(100% - #{rem(91)});
+    left: calc((1163 / 1440) * 100%);
+    width: rem(194);
+    height: rem(181);
+    background-image: url(../images/illustration/coral.png);
+  }
+}
+
+// blog
+.treat.treat--blog::before {
+  @include mq('md') {
+    top: rem(-76);
+    left: calc((100 / 1440) * 100%);
+    width: rem(437);
+    height: rem(201);
+    background-image: url(../images/illustration/goldfishWhite.png);
+  }
+}
+
+.treat.treat--blog::after {
+  @include mq('md') {
+    content: none;
+  }
+}
+
+// voice
+.treat.treat--voice::before {
+  @include mq('md') {
+    top: rem(-120);
+    left: calc((100 / 1440) * 100%);
+    width: rem(301);
+    height: rem(138);
+    background-image: url(../images/illustration/goldfishRight.png);
+  }
+}
+
+.treat.treat--voice::after {
+  @include mq('md') {
+    top: calc(100% - #{rem(91)});
+    left: calc((1189 / 1440) * 100%);
+    width: rem(71);
+    height: rem(162);
+    background-image: url(../images/illustration/seahorse.png);
+  }
+}
+
+// price
+.treat.treat--price::before {
+  @include mq('md') {
+    content: none;
+  }
+}
+
+.treat.treat--price::after {
+  @include mq('md') {
+    top: calc(100% - #{rem(261)});
+    left: calc((100 / 1440) * 100%);
+    width: rem(437);
+    height: rem(201);
+    background-image: url(../images/illustration/goldfishLeft.png);
+  }
+}
+
+// contact
+.treat.treat--contact::before {
+  content: "";
+  position: absolute;
+  top: rem(-26);
+  left: calc((251 / 375) * 100%);
+  width: rem(109);
+  height: rem(50);
+  background-image: url(../images/illustration/goldfishLeftSp.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include mq('md') {
+    top: rem(-40);
+    left: calc((1089 / 1440) * 100%);
+    width: rem(301);
+    height: rem(138);
+    background-image: url(../images/illustration/goldfishLeft.png);
+  }
+}
+
+.treat.treat--contact::after {
+  @include mq('md') {
+    content: none;
+  }
+}
