@@ -16,6 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: rem(20);
 }
 
 .price-plan__text {
@@ -25,4 +26,8 @@
     font-size: rem(16);
     line-height: calc(24 / 16);
   }
+}
+
+.price-plan__text.price-plan__text--cost {
+  flex-shrink: 0;
 }
