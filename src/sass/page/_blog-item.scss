@@ -7,15 +7,39 @@
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, .25);
 }
 
+.blog-item__img {
+  @include mq('md') {
+    overflow: hidden;
+  }
+}
+
 .blog-item__img img {
   aspect-ratio: 301 / 201;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  @include mq('md') {
+    transition: transform .3s;
+  }
+}
+
+.blog-item:hover .blog-item__img img {
+  @include mq('md') {
+    transform: scale(1.2);
+  }
 }
 
 .blog-item__content {
   margin-top: rem(17);
+  @include mq('md') {
+    transition: opacity .3s;
+  }
+}
+
+.blog-item:hover .blog-item__content {
+  @include mq('md') {
+    opacity: .7;
+  }
 }
 
 .blog-item__time {

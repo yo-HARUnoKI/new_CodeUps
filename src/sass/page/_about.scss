@@ -15,8 +15,10 @@
 
 .about__img-sm {
   width: calc(128 / 345 * 100%);
+  max-width: rem(208);
   @include mq('md') {
     width: calc(400 / 1080 * 100%);
+    max-width: initial;
   }
 }
 
@@ -34,11 +36,13 @@
   margin-top: rem(26);
   margin-left: rem(-64);
   width: calc(281 / 345 * 100%);
+  max-width: rem(456);
   z-index: -1;
   @include mq('md') {
     margin-top: rem(80);
     margin-left: rem(-200);
     width: calc(880 / 1080 * 100%);
+    max-width: initial;
   }
 }
 
