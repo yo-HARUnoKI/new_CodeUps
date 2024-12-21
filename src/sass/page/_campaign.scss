@@ -5,17 +5,11 @@
   overflow: hidden;
   @include mq('md') {
     margin-top: rem(-65);
-    margin-left: calc(175 / 1440 * 100%);
-    width: calc(1260 / 1440 * 100%);
   }
 }
 
 .campaign__inner {
   position: relative;
-  @include mq('md') {
-    padding-inline: 0;
-    max-width: initial;
-  }
 }
 
 .campaign__swiper-container,
@@ -27,8 +21,9 @@
 .campaign__swiper-container {
   margin-left: rem(-10);
   @include mq('md') {
-    margin-left: rem(-5);
+    margin-inline: rem(-10) calc(50% - 50vw);
     padding-top: rem(105);
+    overflow: hidden;
   }
 }
 
@@ -40,6 +35,8 @@
   padding-left: rem(10);
   padding-block: 0 rem(10);
   width: rem(290);
+  height: auto;
+  display: grid;
   @include mq('md') {
     padding-left: rem(10);
     width: rem(343);
@@ -57,7 +54,7 @@
   @include mq('md') {
     position: absolute;
     top: rem(-105);
-    left: calc(100% - (473 / 1440 * 100%));
+    left: calc(100% - (476 / 1440 * 100%));
     width: rem(240);
     height: rem(80);
   }
