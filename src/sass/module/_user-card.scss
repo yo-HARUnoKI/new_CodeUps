@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.voice-item {
+.user-card {
   padding: rem(13) rem(16) rem(24);
   display: block;
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, .25);
@@ -10,19 +10,19 @@
   }
 }
 
-.voice-item:hover {
+.user-card:hover {
   @include mq('md') {
     opacity: .7;
   }
 }
 
-.voice-item__top {
+.user-card__top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.voice-item__content {
+.user-card__content {
   width: calc(149 / 313 * 100%);
   @include mq('md') {
     margin-top: rem(20);
@@ -30,7 +30,7 @@
   }
 }
 
-.voice-item__meta {
+.user-card__meta {
   @include mq('md') {
     display: flex;
     justify-content: space-between;
@@ -38,12 +38,12 @@
   }
 }
 
-.voice-item__gender {
+.user-card__gender {
   font-size: rem(12);
   line-height: calc(18 / 12);
 }
 
-.voice-item__category {
+.user-card__category {
   padding: rem(3) rem(11);
   width: fit-content;
   font-size: rem(12);
@@ -55,14 +55,14 @@
   }
 }
 
-.voice-item__title-box {
+.user-card__title-box {
   margin-top: rem(4);
   @include mq('md') {
     margin-top: rem(8);
   }
 }
 
-.voice-item__title {
+.user-card__title {
   font-size: rem(16);
   font-weight: $medium;
   line-height: calc(23 / 16);
@@ -72,14 +72,14 @@
   }
 }
 
-.voice-item__img {
+.user-card__img {
   margin-top: rem(11);
   @include mq('md') {
     margin-top: 0;
   }
 }
 
-.voice-item__img img {
+.user-card__img img {
   aspect-ratio: 151 / 117;
   width: 100%;
   height: 100%;
@@ -89,13 +89,13 @@
   }
 }
 
-.voice-item__text-box {
+.user-card__text-box {
   margin-top: rem(15);
   @include mq('md') {
     margin-top: rem(40);
   }
 }
 
-.voice-item__text {
+.user-card__text {
   line-height: calc(24 / 16);
 }
