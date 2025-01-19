@@ -1,28 +1,30 @@
 @use "global" as *;
 
-.campaign__wrapper {
-  margin-top: rem(28);
-  overflow: hidden;
+.campaign {
   @include mq('md') {
-    margin-top: rem(-65);
+    position: relative;
   }
 }
 
-.campaign__inner {
-  position: relative;
+.campaign__swiper-buttons {
+  @include mq('md') {
+    position: absolute;
+    top: 0;
+    left: calc(100% - (476 / 1440 * 100%));
+    width: rem(240);
+    height: rem(80);
+  }
 }
 
-.campaign__swiper-container,
-.campaign__swiper,
-.campaign__swiper-wrapper,
-.campaign__swiper-slide {
-  position: relative;
+.campaign__wrapper {
+  margin-top: rem(28);
+  overflow: hidden;
 }
+
 .campaign__swiper-container {
   margin-left: rem(-10);
   @include mq('md') {
     margin-inline: rem(-10) calc(50% - 50vw);
-    padding-top: rem(105);
     overflow: hidden;
   }
 }
@@ -37,6 +39,8 @@
   width: rem(290);
   height: auto;
   display: grid;
+  grid-auto-rows: auto;
+  align-items: stretch; /* 高さを自動で揃える */
   @include mq('md') {
     padding-left: rem(10);
     width: rem(343);
@@ -50,19 +54,11 @@
   }
 }
 
-.campaign__swiper-buttons {
-  @include mq('md') {
-    position: absolute;
-    top: rem(-105);
-    left: calc(100% - (476 / 1440 * 100%));
-    width: rem(240);
-    height: rem(80);
-  }
-}
-
 .campaign__link {
   width: 100%;
-  display: inline-block;
+  height: auto;
+  display: grid;
+  grid-template-rows: auto 1fr;
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, .25);
 }
 
@@ -78,6 +74,8 @@
 
 .campaign__content {
   padding: rem(16) rem(16) rem(24);
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
   @include mq('md') {
     padding: rem(24) rem(16) rem(40);
   }
@@ -130,8 +128,8 @@
   display: flex;
   gap: rem(17);
   @include mq('md') {
-    min-width: rem(264);
     margin-top: rem(8);
+    min-width: rem(264);
     gap: rem(26);
   }
 }

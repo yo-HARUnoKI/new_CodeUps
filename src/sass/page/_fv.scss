@@ -36,20 +36,20 @@
 }
 
 .fv__title {
-  margin-left: rem(22);
   font-size: rem(40);
   font-family: $lato-font-family;
   font-weight: $normal;
   color: $white;
   letter-spacing: 0.54em;
   line-height: calc(48 / 40);
+  text-indent: 0.55em;
   text-align: center;
   text-transform: uppercase;
   @include mq('md') {
-    margin-left: rem(42);
     font-size: rem(80);
     letter-spacing: 0.53em;
     line-height: calc(100 / 80);
+    text-indent: 0.5em;
   }
 }
 
