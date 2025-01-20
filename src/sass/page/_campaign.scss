@@ -10,7 +10,7 @@
   @include mq('md') {
     position: absolute;
     top: 0;
-    left: calc(100% - (476 / 1440 * 100%));
+    left: calc(100% - (420 / 1440 * 100%));
     width: rem(240);
     height: rem(80);
   }
@@ -19,6 +19,9 @@
 .campaign__wrapper {
   margin-top: rem(28);
   overflow: hidden;
+  @include mq('md') {
+    margin-top: rem(39);
+  }
 }
 
 .campaign__swiper-container {

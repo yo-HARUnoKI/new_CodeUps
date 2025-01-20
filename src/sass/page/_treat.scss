@@ -1,5 +1,6 @@
 @use "global" as *;
 
+// 共通
 .treat {
   @include mq('md') {
     position: relative;
@@ -11,112 +12,196 @@
   position: relative;
 }
 
-.treat::before,
-.treat::after {
+.treat__inner {
   @include mq('md') {
-    content: "";
+    padding-inline: rem(25);
     position: absolute;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-// about
-.treat.treat--about::before {
-  @include mq('md') {
-    content: none;
-  }
-}
-
-.treat.treat--about::after {
-  @include mq('md') {
-    top: calc(100% - #{rem(91)});
-    left: calc((1163 / 1440) * 100%);
-    width: rem(194);
-    height: rem(181);
-    background-image: url(../images/illustration/coral.png);
-  }
-}
-
-// blog
-.treat.treat--blog::before {
-  @include mq('md') {
-    top: rem(-76);
-    left: calc((100 / 1440) * 100%);
-    width: rem(437);
-    height: rem(201);
-    background-image: url(../images/illustration/goldfishWhite.png);
-  }
-}
-
-.treat.treat--blog::after {
-  @include mq('md') {
-    content: none;
-  }
-}
-
-// voice
-.treat.treat--voice::before {
-  @include mq('md') {
-    top: rem(-120);
-    left: calc((100 / 1440) * 100%);
-    width: rem(301);
-    height: rem(138);
-    background-image: url(../images/illustration/goldfishRight.png);
-  }
-}
-
-.treat.treat--voice::after {
-  @include mq('md') {
-    top: calc(100% - #{rem(91)});
-    left: calc((1189 / 1440) * 100%);
-    width: rem(71);
-    height: rem(162);
-    background-image: url(../images/illustration/seahorse.png);
-  }
-}
-
-// price
-.treat.treat--price::before {
-  @include mq('md') {
-    content: none;
-  }
-}
-
-.treat.treat--price::after {
-  @include mq('md') {
-    top: calc(100% - #{rem(261)});
-    left: calc((100 / 1440) * 100%);
-    width: rem(437);
-    height: rem(201);
-    background-image: url(../images/illustration/goldfishLeft.png);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
   }
 }
 
 // contact
-.treat.treat--contact::before {
-  content: "";
+.treat.treat--contact .treat__inner {
+  padding-inline: rem(15);
   position: absolute;
-  top: rem(-26);
-  left: calc((251 / 375) * 100%);
-  width: rem(109);
-  height: rem(50);
-  background-image: url(../images/illustration/goldfishLeftSp.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
   @include mq('md') {
-    top: rem(-40);
-    left: calc((1089 / 1440) * 100%);
-    width: rem(301);
-    height: rem(138);
-    background-image: url(../images/illustration/goldfishLeft.png);
+    padding-inline: rem(25);
   }
 }
 
-.treat.treat--contact::after {
+.treat__img {
   @include mq('md') {
-    content: none;
+    position: absolute;
+    z-index: 10;
+  }
+}
+
+.treat__img img {
+  @include mq('md') {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// contact
+.treat.treat--contact .treat__img {
+  position: absolute;
+  z-index: 10;
+}
+
+.treat.treat--contact .treat__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// about
+.treat__about {
+  @include mq('md') {
+    width: calc(1310 / 1440 * 100%);
+    max-width: rem(1310);
+  }
+}
+
+.treat__img.treat__img--about {
+  @include mq('md') {
+    top: calc(100% - #{rem(90)});
+    left: calc(100% - #{rem(212)});
+    width: rem(194);
+    height: rem(181);
+  }
+}
+
+.treat__img.treat__img--about img {
+  @include mq('md') {
+    aspect-ratio: 194 / 181;
+  }
+}
+
+// blog
+.treat__blog {
+  @include mq('md') {
+    width: calc(1290 / 1440 * 100%);
+    max-width: rem(1290);
+  }
+}
+
+.treat__img.treat__img.treat__img--blog {
+  @include mq('md') {
+    top: rem(-76);
+    left: rem(25);
+    width: rem(437);
+    height: rem(201);
+  }
+}
+
+.treat__img.treat__img--blog img {
+  @include mq('md') {
+    aspect-ratio: 437 / 201;
+  }
+}
+
+// voice
+.treat__voice {
+  @include mq('md') {
+    width: calc(1290 / 1440 * 100%);
+    max-width: rem(1290);
+  }
+}
+
+.treat__voice.treat__voice--after {
+  @include mq('md') {
+    width: calc(1130 / 1440 * 100%);
+    max-width: rem(1130);
+  }
+}
+
+.treat__img.treat__img--voice {
+  @include mq('md') {
+    top: rem(-120);
+    left: rem(25);
+    width: rem(301);
+    height: rem(138);
+  }
+}
+
+.treat__img.treat__img--voice img {
+  @include mq('md') {
+    aspect-ratio: 301 / 138;
+  }
+}
+
+.treat__img.treat__img--voice-after {
+  @include mq('md') {
+    top: calc(100% - #{rem(90)});
+    left: calc(100% - #{rem(96)});
+    width: rem(71);
+    height: rem(162);
+  }
+}
+
+.treat__img.treat__img--voice-after img {
+  @include mq('md') {
+    aspect-ratio: 71 / 162;
+  }
+}
+
+// price
+.treat__price {
+  @include mq('md') {
+    width: calc(1290 / 1440 * 100%);
+    max-width: rem(1290);
+  }
+}
+
+.treat__img.treat__img--price {
+  @include mq('md') {
+    top: calc(100% - #{rem(261)});
+    left: rem(25);
+    width: rem(437);
+    height: rem(201);
+  }
+}
+
+.treat__img.treat__img--price img {
+  @include mq('md') {
+    aspect-ratio: 437 / 201;
+  }
+}
+
+// contact
+.treat__contact {
+  width: calc(345 / 375 * 100%);
+  @include mq('md') {
+    width: calc(1390 / 1440 * 100%);
+    max-width: rem(1390);
+  }
+}
+
+.treat__img.treat__img--contact {
+  top: rem(-26);
+  left: calc(100% - #{rem(110)});
+  width: rem(109);
+  height: rem(50);
+  @include mq('md') {
+    top: rem(-40);
+    left: calc(100% - #{rem(326)});
+    width: rem(301);
+    height: rem(138);
+  }
+}
+
+.treat__img.treat__img--contact img {
+  aspect-ratio: 109 / 50;
+  @include mq('md') {
+    aspect-ratio: 301 / 138;
   }
 }
