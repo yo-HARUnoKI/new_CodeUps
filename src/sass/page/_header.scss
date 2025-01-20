@@ -58,8 +58,6 @@
 .header__nav {
   display: none;
   @include mq('md') {
-    padding-top: rem(2);
-    height: inherit;
     display: block;
   }
 }
